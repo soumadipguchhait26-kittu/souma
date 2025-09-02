@@ -1,97 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Academic Website</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-        }
-        .container {
-            max-width: 1000px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soumadip Guchhait | Personal Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-50 text-gray-800">
+<body class="bg-gray-50 text-gray-900 font-sans">
 
-    <!-- Header Section -->
-    <header class="bg-white shadow-sm py-6">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-            <div class="text-center md:text-left mb-4 md:mb-0">
-                <h1 id="user-name" class="text-3xl sm:text-4xl font-extrabold text-gray-900">Dr. Jane Doe</h1>
-                <p id="user-affiliation" class="text-lg sm:text-xl text-gray-500">Postdoctoral Researcher in Computer Science</p>
-            </div>
-            <nav>
-                <ul class="flex space-x-4 sm:space-x-6 text-gray-600 font-medium">
-                    <li><a href="#about" class="hover:text-gray-900 transition-colors">About</a></li>
-                    <li><a href="#research" class="hover:text-gray-900 transition-colors">Research</a></li>
-                    <li><a href="#contact" class="hover:text-gray-900 transition-colors">Contact</a></li>
-                </ul>
-            </nav>
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-xl font-bold text-teal-600">Soumadip Guchhait</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#home" class="hover:text-teal-600">Home</a></li>
+        <li><a href="#about" class="hover:text-teal-600">About</a></li>
+        <li><a href="#publications" class="hover:text-teal-600">Publications</a></li>
+        <li><a href="#gallery" class="hover:text-teal-600">Gallery</a></li>
+        <li><a href="#institute" class="hover:text-teal-600">Institute</a></li>
+        <li><a href="#contact" class="hover:text-teal-600">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-teal-100 to-white">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Soumadip Guchhait</h2>
+    <p class="text-lg md:text-xl mb-6">PhD Research Scholar | Environmental Chemistry | Emerging Contaminants</p>
+    <a href="#about" class="bg-teal-600 text-white px-6 py-3 rounded-lg shadow hover:bg-teal-700 transition">Explore My Work</a>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="py-20 container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center">About Me</h2>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <img src="images/profile.png" alt="Profile Photo" class="rounded-full shadow-lg w-64 mx-auto">
+      </div>
+      <div>
+        <p class="mb-4">
+          I am a PhD researcher at IISER Kolkata working in the field of <strong>environmental chemistry</strong>.
+          My research focuses on understanding how <strong>emerging pollutants</strong> (nanoplastics, pharmaceuticals)
+          interact with minerals in natural environments, influencing their <strong>transport, transformation, and ultimate fate</strong>.
+        </p>
+        <p class="mb-4">
+          Currently, I am synthesizing sustainable, eco-friendly materials to mitigate pollutant exposure in aquatic systems.
+        </p>
+        <p>
+          Beyond research, I enjoy <strong>sports</strong> and <strong>reading stories</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center">Publications</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Example Publication Card (Replace with your own) -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">[Paper Title Here]</h3>
+          <p class="text-gray-600 mb-2">Authors: [Your Name, Co-Authors]</p>
+          <p class="text-gray-500 mb-2"><em>Journal / Conference, Year</em></p>
+          <a href="#" class="text-teal-600 hover:underline">Read More</a>
         </div>
-    </header>
 
-    <main class="container mx-auto px-4 py-8">
+        <!-- Duplicate above block for more papers -->
 
-        <!-- Hero/Profile Section -->
-        <section id="about" class="bg-white rounded-lg shadow-sm p-6 sm:p-8 mb-8 flex flex-col md:flex-row items-center gap-6">
-            <!-- To change your picture, replace the image URL in the `src` attribute below -->
-            <img id="profile-picture" src="https://placehold.co/200x200/e2e8f0/64748b?text=Your+Photo" alt="Profile picture of Dr. Jane Doe" class="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-4 border-gray-200">
-            <div class="text-center md:text-left">
-                <!-- To change your biography, replace the text inside the <p> tag -->
-                <p id="biography" class="text-gray-700 leading-relaxed">
-                    I am a postdoctoral researcher with a passion for machine learning and its applications in healthcare. My work focuses on developing novel algorithms for medical image analysis and building robust, explainable AI systems. I completed my Ph.D. at XYZ University and have been a researcher for over five years. I'm always looking for new challenges and opportunities to collaborate on projects that make a real-world impact.
-                </p>
-            </div>
-        </section>
+      </div>
+    </div>
+  </section>
 
-        <!-- Research/Publications Section -->
-        <section id="research" class="bg-white rounded-lg shadow-sm p-6 sm:p-8 mb-8">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 border-b pb-2">Research & Publications</h2>
-            <div class="space-y-6">
-                <!-- To add a new publication, copy the entire block below and paste it for a new entry -->
-                <div class="border-b last:border-b-0 pb-4">
-                    <h3 id="pub-title-1" class="text-xl font-semibold text-gray-800">"A Novel Approach to AI-Driven Medical Image Classification"</h3>
-                    <p id="pub-journal-1" class="text-gray-600 italic">Journal of Medical AI, Vol. 10, Issue 2</p>
-                    <p id="pub-authors-1" class="text-sm text-gray-500">Jane Doe, John Smith, Alice Johnson</p>
-                    <p id="pub-link-1" class="text-sm mt-2"><a href="https://example.com/publication-link-1" class="text-blue-600 hover:underline">Read the full paper</a></p>
-                </div>
-                <!-- You can add more publications by copying the block above -->
-                <div class="border-b last:border-b-0 pb-4">
-                    <h3 id="pub-title-2" class="text-xl font-semibold text-gray-800">"Machine Learning for Predictive Healthcare Diagnostics"</h3>
-                    <p id="pub-journal-2" class="text-gray-600 italic">International Conference on Machine Learning</p>
-                    <p id="pub-authors-2" class="text-sm text-gray-500">Jane Doe, Bob Miller</p>
-                    <p id="pub-link-2" class="text-sm mt-2"><a href="https://example.com/publication-link-2" class="text-blue-600 hover:underline">Read the full paper</a></p>
-                </div>
-            </div>
-        </section>
+  <!-- Gallery -->
+  <section id="gallery" class="py-20 container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center">Gallery</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Example Images -->
+      <img src="images/gallery1.jpg" alt="Gallery Image 1" class="rounded-lg shadow-md">
+      <img src="images/gallery2.jpg" alt="Gallery Image 2" class="rounded-lg shadow-md">
+      <img src="images/gallery3.jpg" alt="Gallery Image 3" class="rounded-lg shadow-md">
+    </div>
+  </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="bg-white rounded-lg shadow-sm p-6 sm:p-8">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 border-b pb-2">Contact</h2>
-            <div class="space-y-4 text-gray-700">
-                <!-- To change your email address, replace the 'your-email@example.com' placeholder -->
-                <p><strong>Email:</strong> <a href="mailto:your-email@example.com" class="text-blue-600 hover:underline">your-email@example.com</a></p>
-                <!-- To change your social media links, replace the URLs -->
-                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" class="text-blue-600 hover:underline" target="_blank">linkedin.com/in/yourprofile</a></p>
-                <p><strong>Twitter:</strong> <a href="https://twitter.com/yourhandle" class="text-blue-600 hover:underline" target="_blank">twitter.com/yourhandle</a></p>
-            </div>
-        </section>
+  <!-- About the Institute -->
+  <section id="institute" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-teal-600 mb-8">About IISER Kolkata</h2>
+      <p class="mb-6 max-w-3xl mx-auto">
+        The Indian Institute of Science Education and Research Kolkata (IISER-K) is a premier research and teaching institute 
+        dedicated to science education and cutting-edge research across disciplines. 
+        The institute provides state-of-the-art facilities and fosters interdisciplinary collaborations to address pressing scientific challenges.
+      </p>
+      <a href="https://www.iiserkol.ac.in/" target="_blank" class="bg-teal-600 text-white px-6 py-3 rounded-lg shadow hover:bg-teal-700 transition">Visit IISER Kolkata</a>
+    </div>
+  </section>
 
-    </main>
+  <!-- Contact -->
+  <section id="contact" class="py-20 container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center">Contact</h2>
+    <div class="text-center">
+      <p class="mb-4">📧 <a href="mailto:soumadipguchhait26@gmail.com" class="text-teal-600 hover:underline">soumadipguchhait26@gmail.com</a></p>
+      <p class="mb-4">🔗 <a href="https://www.linkedin.com/" class="text-teal-600 hover:underline">LinkedIn</a> | <a href="https://github.com/soumadipguchhait26" class="text-teal-600 hover:underline">GitHub</a> | <a href="#" class="text-teal-600 hover:underline">Google Scholar</a></p>
+    </div>
+  </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-800 text-white py-6 mt-8">
-        <div class="container mx-auto px-4 text-center text-sm text-gray-400">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-teal-600 text-white text-center py-6">
+    <p>© 2024 Soumadip Guchhait. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
+
