@@ -25,14 +25,22 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="relative h-screen flex flex-col justify-center items-center text-center text-white">
-  <!-- Slideshow Background -->
-  <div class="absolute inset-0 z-0 animate-slideshow bg-cover bg-center"></div>
+ <section id="home" class="relative h-screen flex flex-col justify-center items-center text-center text-white overflow-hidden">
+  
+  <!-- Sliding Background -->
+  <div class="absolute inset-0 z-0">
+    <div class="flex w-[400%] h-full animate-slide">
+      <img src="images/bg1.jpg" class="w-1/4 object-cover" alt="">
+      <img src="images/bg2.jpg" class="w-1/4 object-cover" alt="">
+      <img src="images/bg3.jpg" class="w-1/4 object-cover" alt="">
+      <img src="images/bg4.jpg" class="w-1/4 object-cover" alt="">
+    </div>
+  </div>
 
-  <!-- Overlay (darkens background for readability) -->
+  <!-- Dark Overlay -->
   <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
 
-  <!-- Content -->
+  <!-- Text Content -->
   <div class="relative z-20">
     <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Soumadip Guchhait</h2>
     <p class="text-lg md:text-xl mb-6">PhD Research Scholar | Environmental Chemistry | Emerging Contaminants</p>
@@ -41,18 +49,21 @@
 </section>
 
 <style>
-  /* Background slideshow */
-  @keyframes slideshow {
-    0%   { background-image: url('images/bg1.jpg'); }
-    33%  { background-image: url('images/bg2.jpg'); }
-    66%  { background-image: url('images/bg3.jpg'); }
-    100% { background-image: url('images/bg1.jpg'); }
+  @keyframes slide {
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(0); }
+    25%  { transform: translateX(-25%); }
+    45%  { transform: translateX(-25%); }
+    50%  { transform: translateX(-50%); }
+    70%  { transform: translateX(-50%); }
+    75%  { transform: translateX(-75%); }
+    95%  { transform: translateX(-75%); }
+    100% { transform: translateX(0); }
   }
 
-  .animate-slideshow {
-    animation: slideshow 15s infinite;
-    background-size: cover;
-    background-position: center;
+  .animate-slide {
+    animation: slide 20s infinite;
+    display: flex;
   }
 </style>
 
@@ -152,6 +163,7 @@
 
 </body>
 </html>
+
 
 
 
