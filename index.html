@@ -4,16 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soumadip Guchhait | Personal Website</title>
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a2e0e6ad65.js" crossorigin="anonymous"></script>
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Background slideshow */
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      20%  { transform: translateX(0); }
+      25%  { transform: translateX(-25%); }
+      45%  { transform: translateX(-25%); }
+      50%  { transform: translateX(-50%); }
+      70%  { transform: translateX(-50%); }
+      75%  { transform: translateX(-75%); }
+      95%  { transform: translateX(-75%); }
+      100% { transform: translateX(0); }
+    }
+    .animate-slide {
+      animation: slide 20s infinite;
+      display: flex;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body class="bg-gray-50 text-gray-900">
 
   <!-- Navbar -->
-<nav class="container mx-auto flex justify-between items-center py-4 px-6">
-  <h1 class="text-xl font-semibold text-teal-700 tracking-tight">
-    🔬 Constant Learner
-  </h1>
-        <ul class="flex space-x-6 font-medium">
+  <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-xl font-bold text-teal-700 tracking-tight">🔬 Research & Curiosity</h1>
+      <ul class="hidden md:flex space-x-6 font-medium">
         <li><a href="#home" class="hover:text-teal-600">Home</a></li>
         <li><a href="#about" class="hover:text-teal-600">About</a></li>
         <li><a href="#publications" class="hover:text-teal-600">Publications</a></li>
@@ -25,99 +55,52 @@
   </header>
 
   <!-- Hero Section -->
- <section id="home" class="relative h-screen flex flex-col justify-center items-center text-center text-white overflow-hidden">
-  
-  <!-- Sliding Background -->
-  <div class="absolute inset-0 z-0">
-    <div class="flex w-[400%] h-full animate-slide">
-      <img src="images/bg1.jpg" class="w-1/4 object-cover" alt="">
-      <img src="images/bg2.jpg" class="w-1/4 object-cover" alt="">
-      <img src="images/bg3.jpg" class="w-1/4 object-cover" alt="">
-      <img src="images/bg4.jpg" class="w-1/4 object-cover" alt="">
+  <section id="home" class="relative h-screen flex flex-col justify-center items-center text-center text-white overflow-hidden">
+    <!-- Sliding Background -->
+    <div class="absolute inset-0 z-0">
+      <div class="flex w-[400%] h-full animate-slide">
+        <img src="images/bg1.jpg" class="w-1/4 object-cover" alt="">
+        <img src="images/bg2.jpg" class="w-1/4 object-cover" alt="">
+        <img src="images/bg3.jpg" class="w-1/4 object-cover" alt="">
+        <img src="images/bg4.jpg" class="w-1/4 object-cover" alt="">
+      </div>
     </div>
-  </div>
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+    <!-- Text Content -->
+    <div class="relative z-20 px-4">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Soumadip Guchhait</h2>
+      <p class="text-lg md:text-xl mb-6">Advancing Sustainable Solutions for Emerging Pollutants</p>
+      <a href="#about" class="bg-teal-600 text-white px-6 py-3 rounded-lg shadow hover:bg-teal-700 transition">Explore My Work</a>
+    </div>
+  </section>
 
-  <!-- Dark Overlay -->
-  <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
-
-  <!-- Text Content -->
-  <div class="relative z-20">
-    <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Soumadip Guchhait</h2>
-    <p class="text-lg md:text-xl mb-6">PhD Research Scholar | Environmental Chemistry | Emerging Contaminants</p>
-    <a href="#about" class="bg-teal-600 text-white px-6 py-3 rounded-lg shadow hover:bg-teal-700 transition">Explore My Work</a>
-  </div>
-</section>
-
-<style>
-  @keyframes slide {
-    0%   { transform: translateX(0); }
-    20%  { transform: translateX(0); }
-    25%  { transform: translateX(-25%); }
-    45%  { transform: translateX(-25%); }
-    50%  { transform: translateX(-50%); }
-    70%  { transform: translateX(-50%); }
-    75%  { transform: translateX(-75%); }
-    95%  { transform: translateX(-75%); }
-    100% { transform: translateX(0); }
-  }
-
-  .animate-slide {
-    animation: slide 20s infinite;
-    display: flex;
-  }
-</style>
-
-  <!-- About Me -->
+  <!-- About -->
   <section id="about" class="py-20 container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center">About Me</h2>
-    <div class="grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <img src="images/profile.png" alt="Profile Photo" class="rounded-full shadow-lg w-64 mx-auto">
-      </div>
-      <div>
-        <p class="mb-4">
-          I am a PhD researcher at IISER Kolkata working in the field of <strong>environmental chemistry</strong>.
-          My research focuses on understanding how <strong>emerging pollutants</strong> (nanoplastics, pharmaceuticals)
-          interact with minerals in natural environments, influencing their <strong>transport, transformation, and ultimate fate</strong>.
-        </p>
-        <p class="mb-4">
-          Currently, I am synthesizing sustainable, eco-friendly materials to mitigate pollutant exposure in aquatic systems.
-        </p>
-        <p>
-          Beyond research, I enjoy <strong>sports</strong> and <strong>reading stories</strong>.
-        </p>
-      </div>
-    </div>
+    <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center"><i class="fas fa-user-graduate"></i> About Me</h2>
+    <p class="max-w-3xl mx-auto text-center mb-4">
+      I am a PhD researcher at IISER Kolkata working in the field of <strong>environmental chemistry</strong>.  
+      My research focuses on understanding how <strong>emerging pollutants</strong> (nanoplastics, pharmaceuticals) interact with minerals in natural environments, influencing their <strong>transport, transformation, and ultimate fate</strong>.
+    </p>
+    <p class="max-w-3xl mx-auto text-center">
+      Currently, I am synthesizing sustainable, eco-friendly materials to mitigate pollutant exposure in aquatic systems.  
+      Beyond research, I enjoy <strong>sports</strong> and <strong>reading stories</strong>.
+    </p>
   </section>
 
   <!-- Publications -->
   <section id="publications" class="py-20 bg-gray-100">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center">Publications</h2>
+      <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center"><i class="fas fa-book"></i> Publications</h2>
       <div class="grid md:grid-cols-2 gap-8">
 
-        <!-- Example Publication Card (Replace with your own) -->
+        <!-- Example Paper -->
         <div class="bg-white shadow-md rounded-lg p-6">
-          <h3 class="text-xl font-semibold mb-2">Influence of goethite on the fate of antibiotic (tetracycline) in the aqueous environment: Effect of cationic and anionic surfactants</h3>
-          <p class="text-gray-600 mb-2">Authors: Soumadip Guchhait, Aniket Choudhary,  Gopala Krishna Darbha</p>
-          <p class="text-gray-500 mb-2"><em>Science of The Total Environment, 2025</em></p>
-          <a href="https://doi.org/10.1016/j.scitotenv.2025.178495" class="text-teal-600 hover:underline">Read More</a>
+          <h3 class="text-xl font-semibold mb-2">[Paper Title Here]</h3>
+          <p class="text-gray-600 mb-2">Authors: [Your Name, Co-Authors]</p>
+          <p class="text-gray-500 mb-2"><em>Journal / Conference, Year</em></p>
+          <a href="#" target="_blank" class="text-teal-600 hover:underline">Read More</a>
         </div>
-                <!-- Example Publication Card (Replace with your own) -->
-        <div class="bg-white shadow-md rounded-lg p-6">
-          <h3 class="text-xl font-semibold mb-2">Investigating the sorption of Zinc-Oxide nanoparticles on Tire-wear particles and their toxic effects on Chlorella vulgaris: Insights from toxicological models and physiological analysis</h3>
-          <p class="text-gray-600 mb-2">Authors: Zahid Ahmad Ganie, Soumadip Guchhait, Mohmmed Talib, Aniket Choudhary,  Gopala Krishna Darbha</p>
-          <p class="text-gray-500 mb-2"><em>Journal of Hazardous Materials, 2025</em></p>
-          <a href="https://doi.org/10.1016/j.jhazmat.2024.136648" class="text-teal-600 hover:underline">Read More</a>
-        </div>
-        <div class="bg-white shadow-md rounded-lg p-6">
-          <h3 class="text-xl font-semibold mb-2">Engineered MnO2-Multiwalled carbon Nanotube nanoheterostructures for efficient removal of nanoplastics and plastic-derived contaminant Bisphenol S from contaminated water</h3>
-          <p class="text-gray-600 mb-2">Authors: Abhishek Mandal,  Arpan Sarkar, Sangeetha Thykandi, Soumadip Guchhait,  Gopala Krishna Darbha</p>
-          <p class="text-gray-500 mb-2"><em>Environmental Nanotechnology, Monitoring & Management, 2025</em></p>
-          <a href="https://doi.org/10.1016/j.enmm.2024.101038" class="text-teal-600 hover:underline">Read More</a>
-        </div>
-
-        <!-- Duplicate above block for more papers -->
 
       </div>
     </div>
@@ -125,19 +108,18 @@
 
   <!-- Gallery -->
   <section id="gallery" class="py-20 container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center">Gallery</h2>
+    <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center"><i class="fas fa-images"></i> Gallery</h2>
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <!-- Example Images -->
-      <img src="images/gallery1.jpg" alt="Gallery Image 1" class="rounded-lg shadow-md">
-      <img src="images/gallery2.jpg" alt="Gallery Image 2" class="rounded-lg shadow-md">
-      <img src="images/gallery3.jpg" alt="Gallery Image 3" class="rounded-lg shadow-md">
+      <img src="images/gallery1.jpg" alt="Gallery Image" class="rounded-lg shadow-md">
+      <img src="images/gallery2.jpg" alt="Gallery Image" class="rounded-lg shadow-md">
+      <img src="images/gallery3.jpg" alt="Gallery Image" class="rounded-lg shadow-md">
     </div>
   </section>
 
-  <!-- About the Institute -->
+  <!-- Institute -->
   <section id="institute" class="py-20 bg-gray-100">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-teal-600 mb-8">About IISER Kolkata</h2>
+      <h2 class="text-3xl font-bold text-teal-600 mb-8"><i class="fas fa-university"></i> About IISER Kolkata</h2>
       <p class="mb-6 max-w-3xl mx-auto">
         The Indian Institute of Science Education and Research Kolkata (IISER-K) is a premier research and teaching institute 
         dedicated to science education and cutting-edge research across disciplines. 
@@ -149,35 +131,33 @@
 
   <!-- Contact -->
   <section id="contact" class="py-20 container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center">Contact</h2>
-    <div class="text-center">
-      <p class="mb-4">📧 <a href="mailto:soumadipguchhait26@gmail.com" class="text-teal-600 hover:underline">soumadipguchhait26@gmail.com</a></p>
-      <p class="mb-4">🔗 <a href="https://www.linkedin.com/" class="text-teal-600 hover:underline">LinkedIn</a> | <a href="https://github.com/soumadipguchhait26" class="text-teal-600 hover:underline">GitHub</a> | <a href="#" class="text-teal-600 hover:underline">Google Scholar</a></p>
+    <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center"><i class="fas fa-envelope"></i> Contact</h2>
+    <div class="text-center space-y-4">
+      <p>📧 <a href="mailto:soumadipguchhait26@gmail.com" class="text-teal-600 hover:underline">soumadipguchhait26@gmail.com</a></p>
+      <p>
+        <a href="https://www.linkedin.com" target="_blank" class="text-teal-600 hover:underline"><i class="fab fa-linkedin"></i> LinkedIn</a> |
+        <a href="https://github.com/soumadipguchhait26" target="_blank" class="text-teal-600 hover:underline"><i class="fab fa-github"></i> GitHub</a> |
+        <a href="#" target="_blank" class="text-teal-600 hover:underline"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+      </p>
     </div>
   </section>
 
   <!-- Footer -->
-<footer class="bg-teal-600 text-white text-center py-4">
-  <p>© 2024 Soumadip Guchhait. All rights reserved.</p>
-  <p class="mt-2 flex justify-center items-center space-x-2">
-    Visitor Count:
-    <img src="https://hitwebcounter.com/counter/counter.php?page=21437326&style=0032&nbdigits=5&type=page&initCount=0" 
-         title="Visitor Counter" alt="Visitor Counter" />
-  </p>
-</footer>
+  <footer class="bg-teal-600 text-white text-center py-4">
+    <p>© 2024 Soumadip Guchhait. All rights reserved.</p>
+    <p id="lastUpdated" class="mt-1 text-sm"></p>
+    <div class="mt-2 flex justify-center">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=21437326&style=0032&nbdigits=5&type=page&initCount=0" alt="Visitor Counter">
+    </div>
+  </footer>
 
-
-
-
+  <!-- JS: Last Updated -->
+  <script>
+    document.getElementById("lastUpdated").textContent = "Last updated on: " + new Date().toLocaleDateString();
+  </script>
 
 </body>
 </html>
-
-
-
-
-
-
 
 
 
