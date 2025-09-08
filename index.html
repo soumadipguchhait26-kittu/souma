@@ -10,7 +10,12 @@
   
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a2e0e6ad65.js" crossorigin="anonymous"></script>
   
@@ -118,14 +123,38 @@
   </section>
 
   <!-- Gallery -->
-  <section id="gallery" class="py-20 container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center"><i class="fas fa-images"></i> Gallery</h2>
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <img src="images/gallery1.jpg" alt="Gallery Image" class="rounded-lg shadow-md">
-      <img src="images/gallery2.jpg" alt="Gallery Image" class="rounded-lg shadow-md">
-      <img src="images/gallery3.jpg" alt="Gallery Image" class="rounded-lg shadow-md">
+<section id="gallery" class="py-20 container mx-auto px-6">
+  <h2 class="text-3xl font-bold text-teal-600 mb-8 text-center">
+    <i class="fas fa-images"></i> Gallery
+  </h2>
+
+  <!-- Swiper Container -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <img src="images/gallery1.jpg" alt="Gallery Image 1" class="rounded-lg shadow-md mx-auto">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/gallery2.jpg" alt="Gallery Image 2" class="rounded-lg shadow-md mx-auto">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/gallery3.jpg" alt="Gallery Image 3" class="rounded-lg shadow-md mx-auto">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/gallery4.jpg" alt="Gallery Image 4" class="rounded-lg shadow-md mx-auto">
+      </div>
+      <!-- Add more slides as needed -->
     </div>
-  </section>
+
+    <!-- Navigation Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- Pagination Dots -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
 
   <!-- Institute -->
   <section id="institute" class="py-20 bg-gray-100">
@@ -166,9 +195,29 @@
   <script>
     document.getElementById("lastUpdated").textContent = "Last updated on: " + new Date().toLocaleDateString();
   </script>
+  <script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
 
 </body>
 </html>
+
 
 
 
