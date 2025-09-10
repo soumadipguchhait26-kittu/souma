@@ -45,19 +45,37 @@
 <body class="bg-gray-50 text-gray-900">
 
   <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
-    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-      <h1 class="text-xl font-bold text-teal-700 tracking-tight">👨‍🎓 Constant learner</h1>
-      <ul class="hidden md:flex space-x-6 font-medium">
-        <li><a href="#home" class="hover:text-teal-600">Home</a></li>
-        <li><a href="#about" class="hover:text-teal-600">About</a></li>
-        <li><a href="#publications" class="hover:text-teal-600">Publications</a></li>
-        <li><a href="#gallery" class="hover:text-teal-600">Gallery</a></li>
-        <li><a href="#institute" class="hover:text-teal-600">Institute</a></li>
-        <li><a href="#contact" class="hover:text-teal-600">Contact</a></li>
-      </ul>
+<header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+    <!-- Logo / Brand -->
+    <h1 class="text-2xl font-bold text-teal-600">Constant Learner</h1>
+
+    <!-- Hamburger button (visible on mobile only) -->
+    <button id="menu-btn" class="block md:hidden text-3xl text-teal-600 focus:outline-none">
+      ☰
+    </button>
+
+    <!-- Navigation -->
+    <nav id="menu" class="hidden md:flex space-x-6 text-gray-700 font-medium">
+      <a href="#home" class="hover:text-teal-600 transition">Home</a>
+      <a href="#about" class="hover:text-teal-600 transition">About</a>
+      <a href="#publications" class="hover:text-teal-600 transition">Publications</a>
+      <a href="#gallery" class="hover:text-teal-600 transition">Gallery</a>
+      <a href="#institute" class="hover:text-teal-600 transition">Institute</a>
+      <a href="#contact" class="hover:text-teal-600 transition">Contact</a>
     </nav>
-  </header>
+  </div>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobile-menu" class="hidden flex-col space-y-4 px-6 py-4 bg-white shadow-md md:hidden">
+    <a href="#home" class="hover:text-teal-600 transition">Home</a>
+    <a href="#about" class="hover:text-teal-600 transition">About</a>
+    <a href="#publications" class="hover:text-teal-600 transition">Publications</a>
+    <a href="#gallery" class="hover:text-teal-600 transition">Gallery</a>
+    <a href="#institute" class="hover:text-teal-600 transition">Institute</a>
+    <a href="#contact" class="hover:text-teal-600 transition">Contact</a>
+  </div>
+</header>
 
   <!-- Hero Section -->
   <section id="home" class="relative h-screen flex flex-col justify-center items-center text-center text-white overflow-hidden">
@@ -254,9 +272,17 @@
     },
   });
 </script>
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
 
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
 </body>
 </html>
+
 
 
 
