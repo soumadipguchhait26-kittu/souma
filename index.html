@@ -67,14 +67,15 @@
   </div>
 
   <!-- Mobile Menu (hidden by default) -->
-  <div id="mobile-menu" class="hidden flex-col space-y-4 px-6 py-4 bg-white shadow-md md:hidden">
-    <a href="#home" class="hover:text-teal-600 transition">Home</a>
-    <a href="#about" class="hover:text-teal-600 transition">About</a>
-    <a href="#publications" class="hover:text-teal-600 transition">Publications</a>
-    <a href="#gallery" class="hover:text-teal-600 transition">Gallery</a>
-    <a href="#institute" class="hover:text-teal-600 transition">Institute</a>
-    <a href="#contact" class="hover:text-teal-600 transition">Contact</a>
-  </div>
+  <!-- Mobile Menu (hidden by default, vertical with animation) -->
+<div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out flex flex-col space-y-4 px-6 bg-white shadow-md md:hidden">
+  <a href="#home" class="hover:text-teal-600 transition">Home</a>
+  <a href="#about" class="hover:text-teal-600 transition">About</a>
+  <a href="#publications" class="hover:text-teal-600 transition">Publications</a>
+  <a href="#gallery" class="hover:text-teal-600 transition">Gallery</a>
+  <a href="#institute" class="hover:text-teal-600 transition">Institute</a>
+  <a href="#contact" class="hover:text-teal-600 transition">Contact</a>
+</div>
 </header>
 
   <!-- Hero Section -->
@@ -277,11 +278,18 @@
   const menu = document.getElementById('mobile-menu');
 
   btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
+    if (menu.classList.contains('max-h-0')) {
+      menu.classList.remove('max-h-0');
+      menu.classList.add('max-h-screen', 'py-4'); // expands smoothly
+    } else {
+      menu.classList.add('max-h-0');
+      menu.classList.remove('max-h-screen', 'py-4'); // collapses smoothly
+    }
   });
 </script>
 </body>
 </html>
+
 
 
 
